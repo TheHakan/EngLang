@@ -1,0 +1,8 @@
+# grammar.ebnf
+
+assignment ::= "Set" identifier "to" expression
+if_statement ::= "If" expression "is" comparison "then" statement
+for_loop ::= "For each" identifier "in" identifier "do" statement
+expression ::= number | identifier
+comparison ::= "greater than" | "less than"
+statement ::= "print" expression | assignment
