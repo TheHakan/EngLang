@@ -1,0 +1,22 @@
+# Ignore compiled object files, libraries, and executables
+*.o
+*.a
+*.so
+*.exe
+*.dll
+
+# Ignore build folder (contains compiled output)
+/build/
+
+# Ignore VS Code settings and workspace-specific files
+.vscode/
+
+# Ignore temporary files
+*.tmp
+*.log
+*.swp
+.DS_Store
+Thumbs.db
+
+# Ignore test output files
+/tests/*.exe
