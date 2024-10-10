@@ -20,3 +20,13 @@ Thumbs.db
 
 # Ignore test output files
 /tests/*.exe
+
+# Ignore auto-generated Bison/Yacc files
+/grammar/grammar.tab.c
+/grammar/grammar.tab.h
+
+# Ignore core dumps (Linux/macOS specific)
+core
+
+# Ignore backup files created by editors
+*~

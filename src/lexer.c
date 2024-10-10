@@ -2,62 +2,61 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 Token getNextToken(const char *source, int *pos)
 {
     Token token;
 
-    // Skip any whitespace
-    while (source[*pos] == ' ' || source[*pos] == '\t' || source[*pos] == '\n')
+    // Skip any whitespace or newlines
+    while (source[*pos] == ' ' || source[*pos] == '\t' || source[*pos] == '\n' || source[*pos] == '\r')
     {
         (*pos)++;
     }
 
-    // Check for the keyword "Set"
+    // Tokenization logic for other tokens (Set, Print, identifiers, etc.)
     if (strncmp(&source[*pos], "Set", 3) == 0)
     {
         token.type = TOKEN_SET;
         strcpy(token.value, "Set");
         *pos += 3;
     }
-    // Check for the keyword "to"
-    else if (strncmp(&source[*pos], "to", 2) == 0)
+    else if (strncmp(&source[*pos], "Print", 5) == 0)
+    {
+        token.type = TOKEN_PRINT;
+        strcpy(token.value, "Print");
+        *pos += 5;
+    }
+    else if (isalpha(source[*pos])) // Identify variable names
     {
         token.type = TOKEN_IDENTIFIER;
-        strcpy(token.value, "to");
-        *pos += 2;
-    }
-    // Check for an identifier (like variable names: "x")
-    else if (isalpha(source[*pos]))
-    {
-        token.type = TOKEN_IDENTIFIER;
-        token.value[0] = source[*pos];
-        token.value[1] = '\0';
-        (*pos)++;
-    }
-    // Check for a number (like "10")
-    else if (isdigit(source[*pos]))
-    {
         int start = *pos;
-        while (isdigit(source[*pos]))
-        {
-            (*pos)++;
-        }
+        while (isalpha(source[*pos]))
+            (*pos)++; // Read the full identifier
         strncpy(token.value, &source[start], *pos - start);
         token.value[*pos - start] = '\0';
-        token.type = TOKEN_NUMBER;
     }
-    // If it's an unknown character
+    else if (isdigit(source[*pos])) // Identify numbers
+    {
+        token.type = TOKEN_NUMBER;
+        int start = *pos;
+        while (isdigit(source[*pos]))
+            (*pos)++;
+        strncpy(token.value, &source[start], *pos - start);
+        token.value[*pos - start] = '\0';
+    }
     else
     {
         token.type = TOKEN_UNKNOWN;
-        strcpy(token.value, "?");
+        token.value[0] = source[*pos];
+        token.value[1] = '\0';
         (*pos)++;
     }
 
     return token;
 }
 
+// Run the lexer and print tokens
 void runLexer(const char *source)
 {
     int pos = 0;

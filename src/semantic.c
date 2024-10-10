@@ -1,30 +1,28 @@
-#include "parser.c" // Include the parser
+#include "lexer.h"
+#include "parser.h"
+#include "semantic.h"
+#include <stdio.h>
+#include <string.h>
 
 void checkSemantic(ASTNode *node)
 {
-    if (node->token.type == TOKEN_SET)
-    {
-        // Example: You can add type checking here
-        printf("Valid assignment: %s = %s\n", node->left->token.value, node->right->token.value);
-    }
-}
+    if (node == NULL)
+        return;
 
-int main()
-{
-    // Example: After parsing, check the semantics of the AST
-    const char *source = "Set x to 10";
-    int pos = 0;
-    Token tokens[10];
-    int tokenPos = 0;
-
-    while (pos < strlen(source))
+    // Perform a basic semantic check
+    if (node->token.type == TOKEN_SET && node->left != NULL && node->right != NULL)
     {
-        tokens[tokenPos++] = getNextToken(source, &pos);
+        if (node->left->token.type != TOKEN_IDENTIFIER)
+        {
+            printf("Semantic Error: Left side of assignment must be an identifier.\n");
+        }
+        if (node->right->token.type != TOKEN_NUMBER)
+        {
+            printf("Semantic Error: Right side of assignment must be a number.\n");
+        }
     }
 
-    int parsePos = 0;
-    ASTNode *ast = parseAssignment(tokens, &parsePos);
-    checkSemantic(ast); // Check the validity of the AST
-
-    return 0;
+    // Recursively check left and right subtrees
+    checkSemantic(node->left);
+    checkSemantic(node->right);
 }
