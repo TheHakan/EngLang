@@ -1,163 +1,291 @@
 # EngLang
 
-**EngLang** is a free, open-source general-purpose programming language designed with simplicity and human-readability at its core. EngLang uses English-like syntax to minimize code complexity while maximizing performance and scalability. Built to be highly adaptable, EngLang supports a range of applications, from lightweight scripting tasks to performance-heavy projects. Its open-source nature encourages collaboration and evolution, ensuring that all modifications remain accessible to the developer community.
+**EngLang** is a free, open-source, general-purpose programming language designed to make programming as intuitive and accessible as possible. By embracing simplicity and human-readable syntax, EngLang allows users to write code in a way that closely resembles natural English sentences. Whether you're a complete beginner or an experienced developer, EngLang aims to provide a seamless and enjoyable coding experience.
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Why EngLang?](#why-englang)
+  - [Simplicity and Readability](#simplicity-and-readability)
+  - [Accessibility for Beginners](#accessibility-for-beginners)
+  - [Community-Driven Development](#community-driven-development)
+  - [Cross-Platform Compatibility](#cross-platform-compatibility)
+- [Core Principles](#core-principles)
+  - [Free and Open Source](#free-and-open-source)
+  - [Simplicity](#simplicity)
+  - [Collaborative Growth](#collaborative-growth)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Your First EngLang Program](#your-first-englang-program)
+- [Language Features](#language-features)
+  - [Variables](#variables)
+  - [Data Types](#data-types)
+  - [Operators](#operators)
+  - [Control Structures](#control-structures)
+  - [Loops](#loops)
+  - [Functions (Planned)](#functions-planned)
+- [Roadmap](#roadmap)
+  - [Short-Term Goals](#short-term-goals)
+  - [Long-Term Vision](#long-term-vision)
+- [Contribution Guidelines](#contribution-guidelines)
+  - [How to Contribute](#how-to-contribute)
+  - [What We're Looking For](#what-were-looking-for)
+- [License](#license)
+- [Contact](#contact)
+
+## Introduction
+
+Programming languages have traditionally been seen as cryptic and inaccessible to those without a technical background. **EngLang** seeks to change that by introducing a language that reads almost like plain English. By lowering the barrier to entry, we hope to empower more people to learn programming and bring their ideas to life.
+
+**Please note:** EngLang is in its **very early stages of development**. We are actively seeking feedback, ideas, and contributions to help shape the future of this language.
 
 ## Why EngLang?
 
-EngLang was created to address some of the core challenges faced by modern programmers:
+### Simplicity and Readability
 
-1. **Readability**: Many popular programming languages are heavily optimized for machines but can be difficult for humans to read and understand. EngLang's English-like syntax prioritizes readability, allowing developers to focus on logic rather than memorizing complex syntax rules.
-   
-2. **Ease of Use**: Writing code in EngLang should feel natural, especially for new programmers. By minimizing the learning curve with familiar keywords like `Set`, `Print`, `If`, and `Loop`, EngLang enables even beginners to write functional code quickly.
+EngLang prioritizes human readability above all else. By using straightforward English phrases and reducing syntactic clutter, code written in EngLang is easier to read and understand.
 
-3. **Minimized Complexity**: EngLang strips away unnecessary complexity. Instead of requiring long boilerplate code, it emphasizes simplicity by allowing you to express logic in fewer lines of code.
+**Example:**
 
-4. **Open Source & Collaborative**: EngLang is not just a language; it's a community-driven project. As an open-source initiative, EngLang is built on the premise that contributions from developers around the world will evolve the language into something robust, flexible, and powerful.
+```englang
+Set x to 10
+If x is greater than 5
+    Print "x is large"
+EndIf
+```
 
-## How EngLang Works
+### Accessibility for Beginners
 
-EngLang interprets high-level, human-readable instructions and executes them using a flexible, modular backend written in C. The language's structure is straightforward, borrowing elements from well-established paradigms while introducing innovative features that simplify the coding process.
+Learning to code can be intimidating. EngLang reduces this intimidation by using familiar language constructs, allowing beginners to focus on learning programming concepts rather than complex syntax.
 
-Here’s how EngLang is designed:
+### Community-Driven Development
 
-### Core Features
+EngLang is an **open-source** project that thrives on community involvement. We believe that the best software is built collaboratively, and we welcome contributions from developers of all skill levels.
 
-- **English-Like Syntax**: Write code that reads like plain English. Examples of core statements include:
-  - `Set x to 10`: Assigns a value to a variable.
-  - `Print x`: Outputs the value of a variable.
-  - `Print "Hello, World"`: Outputs a string.
-  
-- **Basic Constructs**:
-  - **Variables**: Declare and manipulate variables using simple syntax.
-  - **Conditionals (If Statements)**: Control flow based on conditions.
-  - **Loops**: Repeat actions using loops like `While` and `For`.
-  
-- **Minimal Boilerplate**: No need for complex function declarations or imports to get started. Write only what you need.
+### Cross-Platform Compatibility
 
-- **Cross-Platform Compatibility**: EngLang can be compiled and run on various operating systems, including Linux, macOS, and Windows.
+Built with portability in mind, EngLang runs on all major operating systems, including **Linux**, **macOS**, and **Windows**. The interpreter is written in C, ensuring efficient performance across platforms.
 
-### EngLang Design
+## Core Principles
 
-EngLang’s design philosophy is guided by the following principles:
+### Free and Open Source
 
-1. **Simplicity**: EngLang minimizes the number of keywords and follows a straightforward grammar, allowing users to quickly write, understand, and debug their code. The goal is to keep programming simple and fun.
-   
-2. **Modularity**: The language is built with a modular approach in mind. Individual components like the lexer, parser, and interpreter are separate, which makes it easier to extend or modify the language as needed.
+EngLang is released under the GNU General Public License v3.0. We are committed to keeping EngLang free for everyone to use, modify, and distribute.
 
-3. **Performance**: While ease of use is a primary focus, performance is not sacrificed. By using C as the underlying language for execution, EngLang retains the speed and efficiency of lower-level languages, making it suitable for more demanding applications.
+### Simplicity
 
-4. **Open Collaboration**: EngLang is fully open-source, inviting developers to contribute and extend its capabilities. Whether it’s adding new language features, optimizing performance, or introducing new tools, contributions are welcome.
+We aim to keep the language as simple as possible, avoiding unnecessary complexity while providing the tools needed to build functional programs.
 
-## What Can You Do With EngLang?
+### Collaborative Growth
 
-EngLang is built to accommodate various use cases, including:
-
-- **Scripting and Automation**: Automate tasks with minimal code.
-- **Prototyping**: Quickly draft and test your ideas without worrying about verbose syntax.
-- **Teaching**: EngLang is an excellent educational tool for teaching programming concepts due to its readable and accessible syntax.
-- **Application Development**: Though it’s lightweight, EngLang is designed to handle more complex tasks through its modular architecture and performance-oriented backend.
+We encourage the community to participate in EngLang's development. Your ideas, feedback, and contributions are invaluable to us.
 
 ## Getting Started
 
-To start using EngLang, follow these simple steps:
-
 ### Prerequisites
-- A C compiler such as `gcc`
-- Git for cloning the repository
+
+- A C compiler (e.g., `gcc`)
+- `make` utility
+- Git (for cloning the repository)
 
 ### Installation
 
-1. Clone the repository from GitHub:
+1. **Clone the Repository**
 
-    ```bash
-    git clone https://github.com/TheHakan/EngLang.git
-    cd EngLang
-    ```
+   ```bash
+   git clone https://github.com/TheHakan/EngLang.git
+   cd EngLang
+   ```
 
-2. Build the language interpreter by running the following command:
+2. **Build the Interpreter**
 
-    ```bash
-    make
-    ```
+   ```bash
+   make
+   ```
 
-3. Optionally, install EngLang globally on your system for easy access:
+3. **(Optional) Install Globally**
 
-    ```bash
-    sudo cp eng /usr/local/bin/
-    ```
+   ```bash
+   sudo cp eng /usr/local/bin/
+   ```
 
-### Running Your First EngLang Program
+### Your First EngLang Program
 
-Create a `.eng` file with your program. Here's an example of a simple EngLang script:
+Create a file named `hello.englang`:
 
-```eng
-Set x to 10
-Print x
-Print "Hello, World"
+```englang
+Print "Hello, World!"
 ```
 
-To run your program, simply execute the following command in your terminal:
+Run the program:
 
 ```bash
-eng <filename>
+eng hello.englang
 ```
 
-For example:
+**Expected Output:**
 
-```bash
-eng myprogram.eng
+```
+Hello, World!
 ```
 
-### EngLang Syntax Overview
+## Language Features
 
-Here are some basic syntax examples:
+### Variables
 
-- **Variable Declaration and Assignment**:
-    ```eng
-    Set x to 5
-    Set y to 10
-    ```
+Declare and assign variables using the `Set` keyword.
 
-- **Print Statements**:
-    ```eng
-    Print x          # Prints the value of x
-    Print "Hello!"   # Prints the string "Hello!"
-    ```
+```englang
+Set age to 25
+Set name to "Alice"
+```
 
-- **If Statements**:
-    ```eng
-    If x > 5
-        Print "x is greater than 5"
-    EndIf
-    ```
+### Data Types
 
-- **Loops**:
-    ```eng
-    While x < 10
-        Print x
-        Set x to x + 1
-    EndWhile
-    ```
+EngLang currently supports:
 
-## Contribution
+- Integers
+- Floating-point numbers
+- Strings
+- Booleans (planned)
 
-EngLang is an open-source project, and contributions are always welcome! Whether it's fixing bugs, adding new features, or improving documentation, you can help make EngLang even better.
+### Operators
+
+- Arithmetic: `+`, `-`, `*`, `/`
+- Comparison: `is equal to`, `is not equal to`, `is greater than`, `is less than`
+
+**Example:**
+
+```englang
+Set sum to 5 + 3
+If sum is equal to 8
+    Print "Correct"
+EndIf
+```
+
+### Control Structures
+
+#### If Statements
+
+```englang
+If x is greater than 10
+    Print "x is large"
+Else
+    Print "x is small"
+EndIf
+```
+
+#### Switch Cases (Planned)
+
+```englang
+Switch day
+    Case "Monday"
+        Print "Start of the week"
+    Case "Friday"
+        Print "End of the week"
+    Default
+        Print "Midweek"
+EndSwitch
+```
+
+### Loops
+
+#### While Loops
+
+```englang
+Set i to 0
+While i is less than 5
+    Print i
+    Set i to i + 1
+EndWhile
+```
+
+#### For Loops (Planned)
+
+```englang
+For each item in list
+    Print item
+EndFor
+```
+
+### Functions (Planned)
+
+Defining reusable code blocks.
+
+```englang
+Function greet(name)
+    Print "Hello, " + name
+EndFunction
+
+greet("Alice")
+```
+
+## Roadmap
+
+### Short-Term Goals
+
+- **Implement Functions:** Allow users to define and call functions.
+- **Expand Data Types:** Introduce arrays, lists, and dictionaries.
+- **Error Handling:** Implement try-catch blocks for robust programs.
+- **Standard Library:** Build a library for common tasks like string manipulation and file I/O.
+
+### Long-Term Vision
+
+- **Object-Oriented Features:** Introduce classes and objects.
+- **Concurrency Support:** Enable multi-threading capabilities.
+- **Package Manager:** Develop a system for distributing and installing EngLang packages.
+- **Integrated Development Environment (IDE):** Create an IDE tailored for EngLang.
+
+## Contribution Guidelines
+
+We are excited to have you contribute! EngLang is open to all kinds of ideas and contributions.
 
 ### How to Contribute
 
-1. Fork the repository and clone it locally.
-2. Create a new branch for your feature or bug fix.
-3. Commit your changes with clear messages.
-4. Push the changes to your fork and submit a pull request.
+1. **Fork the Repository**
 
-### Code of Conduct
+   Click the "Fork" button at the top right corner of the repository page.
 
-Please note that this project adheres to the [Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/). By participating, you are expected to uphold this code.
+2. **Clone Your Fork**
+
+   ```bash
+   git clone https://github.com/YourUsername/EngLang.git
+   cd EngLang
+   ```
+
+3. **Create a New Branch**
+
+   ```bash
+   git checkout -b feature-or-bugfix-name
+   ```
+
+4. **Make Your Changes**
+
+   Ensure your code follows the project's coding standards.
+
+5. **Commit and Push**
+
+   ```bash
+   git add .
+   git commit -m "Description of your changes"
+   git push origin feature-or-bugfix-name
+   ```
+
+6. **Submit a Pull Request**
+
+   Go to the original repository and click on "New Pull Request."
+
+### What We're Looking For
+
+- **New Features:** Implement planned features or propose new ones.
+- **Bug Fixes:** Identify and fix bugs.
+- **Documentation:** Improve or expand the documentation.
+- **Testing:** Write unit tests to ensure code reliability.
+- **Optimizations:** Enhance performance and efficiency.
 
 ## License
 
-EngLang is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+EngLang is licensed under the **GNU General Public License v3.0**. You are free to use, modify, and distribute this software under the terms of this license.
 
-EngLang is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with EngLang. If not, see <https://www.gnu.org/licenses/>.
+For more details, see the [LICENSE](LICENSE) file or visit [GNU's official website](https://www.gnu.org/licenses/gpl-3.0.en.html).
