@@ -32,7 +32,6 @@
   - [How to Contribute](#how-to-contribute)
   - [What We're Looking For](#what-were-looking-for)
 - [License](#license)
-- [Contact](#contact)
 
 ## Introduction
 
