@@ -112,7 +112,7 @@ We encourage the community to participate in EngLang's development. Your ideas, 
 
 ### Your First EngLang Program
 
-Create a file named `hello.englang`:
+Create a file named `hello.eng`:
 
 ```englang
 Print "Hello, World!"
@@ -121,7 +121,7 @@ Print "Hello, World!"
 Run the program:
 
 ```bash
-eng hello.englang
+eng hello.eng
 ```
 
 **Expected Output:**
