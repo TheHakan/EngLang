@@ -25,6 +25,7 @@
   - [Control Structures](#control-structures)
   - [Loops](#loops)
   - [Functions (Planned)](#functions-planned)
+- [Project Structure](#project-structure)
 - [Roadmap](#roadmap)
   - [Short-Term Goals](#short-term-goals)
   - [Long-Term Vision](#long-term-vision)
@@ -220,11 +221,48 @@ EndFunction
 greet("Alice")
 ```
 
+## Project Structure
+
+This section provides an overview of the project’s file structure and explains the purpose of each directory and file.
+
+### Top-Level Files:
+- **`CHANGES.md`**: This file tracks all the project’s changes, updates, and new features. Every time you push a commit, ensure to document the modifications here for easy reference.
+  
+- **`CONTRIBUTING.md`**: This file offers guidelines for developers interested in contributing to EngLang. It explains the process of submitting pull requests, writing tests, and adhering to coding standards.
+  
+- **`LICENSE`**: Clearly defines the licensing terms under which this project is released. It protects both developers and users, ensuring clarity about the usage, distribution, and modification of the software.
+
+- **`README.md`**: Provides general information about the EngLang project, its purpose, and how to get started. It also includes instructions for building, contributing, and any other relevant details.
+
+- **`TODO.md`**: This file contains upcoming tasks, features, and improvements. It acts as a roadmap for the project's future direction.
+
+### Key Directories:
+- **`bin/`**: This directory is reserved for compiled binaries or executables. When users compile or build the project, the resulting binaries (compiled programs) will be stored here.
+
+- **`build/`**: Contains temporary or intermediate build artifacts, such as the `mylanguage.exe`. These artifacts are essential during the development process but are not intended to be distributed.
+
+- **`dist/`**: This directory is currently empty but will be used to store the final, distributable version of the project. When the project is packaged (as ZIP files, installers, etc.), they will be placed here.
+
+- **`docs/`**: Contains guides, manuals, or any documentation related to the project. The `GUIDE.md` explains how to use EngLang and contribute to it. You can expand this directory to include more user or developer guides in the future.
+
+- **`grammar/`**: Stores the grammar files that define the syntax of EngLang. This is an important directory as it helps in the lexical analysis and parsing of EngLang programs.
+
+- **`include/`**: Contains all the header files (e.g., `lexer.h`, `parser.h`). These files declare functions, structures, and variables that are shared across different parts of the project. Having them in a central directory keeps the project modular and easy to maintain.
+
+- **`src/`**: This directory houses the actual source code files for EngLang. The source code is organized into subdirectories, such as:
+  - **`interpreter/`**: Contains the code responsible for interpreting EngLang programs.
+  - **`lexer/`**: Manages the lexical analysis (tokenization) of the source code.
+  - **`parser/`**: Handles the parsing of tokens into a syntax tree for execution.
+
+- **`tests/`**: This directory holds all test-related files, such as `test.eng` and `test_runner.c`. It ensures that the project is tested regularly for correctness. Unit tests and functional tests should be stored here to guarantee code quality.
+
 ## Roadmap
 
 ### Short-Term Goals
 
-- **Implement Functions:** Allow users to define and call functions.
+- **Implement Functions:** Allow users
+
+ to define and call functions.
 - **Expand Data Types:** Introduce arrays, lists, and dictionaries.
 - **Error Handling:** Implement try-catch blocks for robust programs.
 - **Standard Library:** Build a library for common tasks like string manipulation and file I/O.

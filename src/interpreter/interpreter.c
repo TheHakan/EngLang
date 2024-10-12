@@ -48,7 +48,7 @@ int main(int argc, char **argv)
     sourceCode[fileSize] = '\0'; // Null-terminate the string
     fclose(file);
 
-    printf("Running the interpreter for: %s\n", filename);
+    // printf("Running the interpreter for: %s\n", filename);
 
     // Run the parser
     runParser(sourceCode);

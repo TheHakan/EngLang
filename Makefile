@@ -2,8 +2,12 @@
 CC = gcc
 CFLAGS = -Wall -Iinclude
 
-# Source and object files
-SRC = src/lexer.c src/parser.c src/interpreter.c src/semantic.c src/codegen.c src/if.c src/loop.c src/expression.c src/block.c src/evaluate.c src/runblock.c
+# Source files organized by subdirectories
+SRC = src/lexer/lexer.c src/parser/parser.c src/interpreter/interpreter.c \
+      src/semantic.c src/codegen.c src/if.c src/loop.c \
+      src/expression.c src/block.c src/evaluate.c src/runblock.c
+
+# Object files derived from the source files
 OBJ = $(SRC:.c=.o)
 
 # Output executable
@@ -20,10 +24,18 @@ $(TARGET): $(OBJ)
 install: $(TARGET)
 	sudo cp $(TARGET) /usr/local/bin/
 
-# Compiling each source file into an object file
+# Rule to compile each source file into an object file
 src/%.o: src/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Clean up object files and the executable
 clean:
-	rm -f src/*.o $(TARGET)
+	rm -f src/**/*.o $(TARGET)
+
+# Rule to remove compiled files
+clean-build:
+	rm -f build/*
+
+# Additional rule to clean object files, binaries, and distribution files
+dist-clean: clean clean-build
+	rm -rf dist/*
